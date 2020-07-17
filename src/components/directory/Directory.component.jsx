@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Project from '../project/Project.component';
+import Project from './project/Project.component';
 
 const DirectoryWrapper = styled.div`
 	display: grid;
@@ -12,7 +12,7 @@ const DirectoryWrapper = styled.div`
 const Directory = () => {
 	return (
 		<DirectoryWrapper>
-			<Project title='calculator'/>
+			<Project title='calculator' />
 		</DirectoryWrapper>
 	);
 };
