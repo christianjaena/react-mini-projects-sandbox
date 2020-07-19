@@ -13,6 +13,7 @@ const Directory = () => {
 	return (
 		<DirectoryWrapper>
 			<Project title='calculator' />
+			<Project title='countdown' />
 		</DirectoryWrapper>
 	);
 };

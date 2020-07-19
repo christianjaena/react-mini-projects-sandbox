@@ -24,6 +24,14 @@ const CalculatorContainer = styled.div`
 const ButtonsContainer = styled.div`
 	border: 1px solid black;
 `;
+const DisplayContainer = styled.div`
+	height: 150px;
+	width: 250px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	flex-direction: column;
+`
 const Calculator = () => {
 	const [answer, setAnswer] = useState(0);
 	const [input, setInput] = useState('');
@@ -46,10 +54,12 @@ const Calculator = () => {
 
 	return (
 		<div>
-			<div onClick={() => history.push('/')}>Back</div>
+			<div onClick={ () => history.push('/') } style={{cursor: 'pointer'}}>Back</div>
 			<CalculatorContainer>
-				<div>{input}</div>
-				<div> = {answer}</div>
+				<DisplayContainer>
+					<h2>{input}</h2>
+					<h2> = {answer}</h2>
+				</DisplayContainer>
 				<ButtonsContainer>
 					<NumberButtonsContainer>
 						<NumberButtonContainer onClick={() => setInput(input.slice(0, -1))}>
@@ -214,7 +224,7 @@ const Calculator = () => {
 						</NumberButtonContainer>
 					</NumberButtonsContainer>
 					<NumberButtonsContainer>
-					<NumberButtonContainer></NumberButtonContainer>	
+						<NumberButtonContainer></NumberButtonContainer>
 						<NumberButtonContainer
 							onClick={() => {
 								setInput(input + '0');
